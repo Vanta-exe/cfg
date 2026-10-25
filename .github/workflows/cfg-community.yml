@@ -1,0 +1,31 @@
+name: CFG community
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/cfg-community.yml', '.github/scripts/**']
+  issues:
+    types: [opened, edited, reopened, closed]
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: cfg-catalog
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Validate publisher
+        run: python3 -m unittest discover -s .github/scripts -p 'test_*.py'
+      - name: Publish configs or refresh statistics
+        run: python3 .github/scripts/cfg_publish.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          CFG_REPOSITORY: ${{ github.repository }}
