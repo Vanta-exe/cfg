@@ -39,6 +39,8 @@ adresleri/imzaları, koruma ayarları ve menü/durdurma tuşları paylaşılmaz.
 - İndirme sayısı bu release'in bütün `.ini` revizyonlarının gerçek GitHub
   `download_count` değerlerinin toplamıdır. Bu sayı tekil kişi sayısı değildir;
   aynı kişinin tekrar indirmeleri ve GitHub'dan doğrudan indirmeleri de dahildir.
+  Gösterilen değer GitHub'ın raporudur; anında güncellenmesi garanti edilmez.
+  Canlı kurulum testinde dosya başarıyla indirilirken API henüz `0` bildirdi.
 - Saatlik workflow istatistikleri kataloğa yazar. Panel Yenile sırasında GitHub
   release sayılarını da okur. API sınırına ulaşılırsa son yayınlanan sayılar
   önbellek etiketiyle gösterilir; sahte artış yapılmaz.
