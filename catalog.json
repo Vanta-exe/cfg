@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repository": "Vanta-exe/cfg",
-  "updated_at": "2026-10-27T23:44:58Z",
+  "updated_at": "2026-10-30T20:45:00Z",
   "profiles": [
     {
       "issue": 1,
@@ -14,7 +14,7 @@
       "bytes": 80,
       "release_id": 423575426,
       "asset_id": 675760865,
-      "downloads": 3,
+      "downloads": 4,
       "revision": "8128d488"
     }
   ]
